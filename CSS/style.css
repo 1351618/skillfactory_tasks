@@ -1,0 +1,30 @@
+#index-header {
+    background-color: aqua;
+}
+
+#index-main__task-1_button,
+#index-main__task-2_button {
+    background-color: blue;
+    height: 50px;
+    width: 100px;
+}
+
+
+.red {
+    background-color: red !important;
+}
+
+.blue {
+    background-color: blue !important;
+}
+
+#index-main__task-3_result img {
+    max-width: 500px;
+    max-height: 500px;
+    margin: 10px;
+}
+
+#index-main__task-3_result {
+    font-size: 20px;
+    color: #f20000;
+}
