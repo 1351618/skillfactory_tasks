@@ -44,7 +44,7 @@ task5Button.addEventListener('click', function () {
 const task_1_button = document.getElementById('index-main__task-1_button');
 task_1_button.addEventListener('click', function () {
     const task_xml_one = new XMLHttpRequest();
-    task_xml_one.open('GET', 'https://1351618.github.io/xml/my_xml.xml');
+    task_xml_one.open('GET', 'https://1351618.github.io/skillfactory_tasks/xml/my_xml.xml');
     task_xml_one.onreadystatechange = function () {
         if (task_xml_one.readyState === 4 && task_xml_one.status === 200) {
             const xmlDoc = task_xml_one.responseXML;
