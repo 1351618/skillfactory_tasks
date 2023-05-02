@@ -80,7 +80,7 @@ task_1_button.addEventListener('click', function () {
 const task_2_button = document.getElementById('index-main__task-2_button');
 task_2_button.addEventListener('click', function () {
     const task2Result = document.querySelector('#index-main__task-2_result');
-    fetch('../json/my_json.json')
+    fetch('https://1351618.github.io/skillfactory_tasks/json/my_json.json')
         .then(response => response.json())
         .then(data => {
             const jsonStr = JSON.stringify(data);
