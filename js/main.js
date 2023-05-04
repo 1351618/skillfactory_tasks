@@ -233,3 +233,160 @@ window.onload = function () {
         <p>Image size: ${savedRandomImage.width}x${savedRandomImage.height}</p>`;
     }
 }
+
+
+
+// index-main__11-2-SVG =====================================================================
+
+// Задание 1
+// Сверстайте кнопку, которая будет содержать в себе icon_01   https://icons.getbootstrap.com/icons/arrow-down-left-circle/
+// (как в примере в последнем видео).При клике на кнопку иконка должна меняться на icon_02    https://icons.getbootstrap.com/icons/arrow-down-left-circle-fill/
+// Повторный клик меняет иконку обратно
+//     Удачи!
+let svg_task_1_button = document.getElementById("index-main__11-2-SVG_task-1_button")
+let icon_1 = `icon_02 &nbsp; &nbsp; 
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-left-circle-fill" viewBox="0 0 16 16">
+<path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-5.904-2.803a.5.5 0 1 1 .707.707L6.707 10h2.768a.5.5 0 0 1 0 1H5.5a.5.5 0 0 1-.5-.5V6.525a.5.5 0 0 1 1 0v2.768l4.096-4.096z"/>
+</svg>`
+let icon_2 = `icon_01 &nbsp;&nbsp; <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+class="bi bi-arrow-down-left-circle" viewBox="0 0 16 16">
+<path fill-rule="evenodd"
+    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-5.904-2.854a.5.5 0 1 1 .707.708L6.707 9.95h2.768a.5.5 0 1 1 0 1H5.5a.5.5 0 0 1-.5-.5V6.475a.5.5 0 1 1 1 0v2.768l4.096-4.097z" />
+</svg>`
+let isClicked = false;
+
+
+svg_task_1_button.addEventListener("click", function () {
+    if (!isClicked) {
+        console.log("12345678")
+        svg_task_1_button.innerHTML = icon_1;
+        isClicked = true;
+    } else {
+        console.log("12345678")
+        svg_task_1_button.innerHTML = icon_2;
+        isClicked = false;
+    }
+
+})
+
+
+// Задание 2
+// Сверстайте кнопку, клик на которую будет выводить данные о размерах экрана с помощью alert.
+// https://developer.mozilla.org/ru/docs/Web/API/Window/alert
+
+let svg_task_2_button = document.getElementById("index-main__11-2-SVG_task-2_button")
+let svg_task_2_result = document.getElementById("index-main__11-2-SVG_task-2_result")
+
+svg_task_2_button.addEventListener("click", function () {
+    let data_us = `Ширина экрана: ${window.innerWidth} пикселей<br>
+    Высота экрана: ${window.innerHeight} пикселей<br><br>
+    ${window.navigator.userAgent}`
+    alert(data_us);
+    svg_task_2_result.innerHTML = data_us;
+})
+
+
+// Задание 3
+// 1 Реализовать чат на основе эхо-сервера wss://echo-ws-service.herokuapp.com.
+// Интерфейс состоит из input, куда вводится текст сообщения, и кнопки «Отправить».
+// При клике на кнопку «Отправить» сообщение должно появляться в окне переписки.
+// Эхо-сервер будет отвечать вам тем же сообщением, его также необходимо выводить в чат:
+// 2 Добавить в чат механизм отправки геолокации:
+// При клике на кнопку «Геолокация» необходимо отправить данные серверу и вывести
+// в чат ссылку на https://www.openstreetmap.org/ с вашей геолокацией. Сообщение,
+// которое отправит обратно эхо-сервер, выводить не нужно.
+
+let chat_box__input = document.getElementById("index-main__11-2-SVG_task-3_head_input")
+let chat_box__send = document.getElementById("index-main__11-2-SVG_task-3_head_button-send")
+let chat_box__location = document.getElementById("index-main__11-2-SVG_task-3_head_button-location")
+let chat_box__content = document.getElementById("chat-box")
+const socket = new WebSocket("wss://echo-ws-service.herokuapp.com");
+
+let chat__history = {}
+
+function block_history(us, mes) {
+    let length = Object.keys(chat__history).length;
+    let get_num = length + 1
+    chat__history[get_num] = {
+        myKey: us,
+        anotherKey: mes
+    };
+}
+
+function make_send(user, send) {
+    let result;
+    if (user === "my-message") {
+        result = `<div class="chat-box__my-message">${send}</div>`
+    } else {
+        result = `<div class="chat-box__other-message">${send}</div>`
+    }
+    return result;
+}
+
+function update_chat_history() {
+    chat_box__content.innerHTML = ""
+    for (let key in chat__history) {
+        let message = chat__history[key]
+        if (message.hasOwnProperty('myKey') && message.hasOwnProperty('anotherKey')) {
+            let user = message.myKey
+            let text = message.anotherKey
+            let message_html = make_send(user, text)
+            chat_box__content.innerHTML += message_html
+        }
+    }
+
+    // добавляем прокрутку вниз, чтобы отобразить последнее сообщение
+    chat_box__content.scrollTop = chat_box__content.scrollHeight;
+}
+
+chat_box__send.addEventListener("click", function () {
+    block_history("my-message", chat_box__input.value)
+
+    const socket = new WebSocket("wss://echo-ws-service.herokuapp.com/");
+    socket.onopen = function (event) {
+        console.log("WebSocket is open now.");
+        socket.send(chat_box__input.value);
+    };
+    socket.onmessage = function (event) {
+        block_history("Message received", event.data)
+        update_chat_history()
+    };
+    socket.onclose = function (event) {
+        block_history("Message received", event.data)
+        update_chat_history()
+    };
+
+    update_chat_history()
+});
+
+
+
+
+
+
+chat_box__location.addEventListener("click", function () {
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+
+    function successCallback(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+
+        const mapLink = `<a href="https://www.openstreetmap.org/#map=18/${latitude}/${longitude}">локация</a>`;
+        console.log(`Your location: ${mapLink}`);
+
+        block_history("my-message", `моя ${mapLink}`);
+        update_chat_history();
+    }
+
+    function errorCallback(error) {
+        block_history("my-message", `локация не доступна`);
+        console.log(`Geolocation error occurred. Error code: ${error.code}. Error message: ${error.message}`);
+        update_chat_history();
+    }
+});
+

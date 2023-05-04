@@ -1,21 +1,24 @@
 #index-header {
     background-color: aqua;
-    height: 40px;
     border-radius: 10px;
     text-align: center;
-    font-size: xx-large;
     font-style: italic;
-    padding: 10px;
 }
+
+#index-main {
+    display: flexbox;
+}
+
 
 .index-main__JSON-vs-XML {
     background-color: #ecfbf8;
-    display: flex;
-    flex-direction: column;
+    display: contents;
+    /* flex-direction: column; */
     height: 100vh;
 }
 
-.index-main__JSON-vs-XML_h1 {
+.index-main__JSON-vs-XML_h1,
+.index-main__11-2-SVG_h1 {
     color: #342e48;
     font-style: italic;
 }
@@ -143,5 +146,123 @@
 
 #index-main__task-5_result p {
     display: none;
+}
 
+
+/* index-main__11-2-SVG ===================================================================== */
+
+.index-main__11-2-SVG_task-1,
+.index-main__11-2-SVG_task-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 50px);
+    background-color: rgba(0, 255, 42, 0.401);
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+}
+
+.index-main__11-2-SVG_task-1 h3,
+.index-main__11-2-SVG_task-2 h3 {
+    grid-row: 1;
+    grid-column: 1;
+    margin-left: 40px;
+}
+
+.index-main__11-2-SVG_task-1 span,
+.index-main__11-2-SVG_task-2 span {
+    grid-row: 2 / span 3;
+    grid-column: 2;
+}
+
+#index-main__11-2-SVG_task-1_button,
+#index-main__11-2-SVG_task-2_button {
+    grid-row: 3;
+    grid-column: 1;
+    height: 40px;
+    width: 300px;
+    margin-left: 100px;
+    border-radius: 20px;
+    border-color: snow;
+    font-size: 20px;
+}
+
+#index-main__11-2-SVG_task-1_button svg {
+    height: 20px;
+    width: 20px;
+}
+
+#index-main__11-2-SVG_task-2_result {
+    grid-row: 4;
+    grid-column: 2;
+}
+
+.index-main__11-2-SVG_task-3 {
+    display: grid;
+    grid-template-columns: repeat(4, 100px) 1fr;
+    grid-template-rows: 45px 247px;
+    background-color: rgba(0, 255, 42, 0.401);
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+    align-content: stretch;
+    justify-content: center;
+}
+
+#index-main__11-2-SVG_task-3_head_input {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    border: 5px solid #00991b;
+    margin: 3px 0px -7px 10px;
+    border-radius: 9px;
+    background-color: cornsilk;
+}
+
+#index-main__11-2-SVG_task-3_head_button-send {
+    grid-row: 1;
+    grid-column: 3;
+    border: 5px solid #00991b;
+    margin: 3px 0px -7px -3px;
+    border-radius: 9px;
+    background-color: #46d7e2;
+}
+
+#index-main__11-2-SVG_task-3_head_button-location {
+    grid-row: 1;
+    grid-column: 4;
+    border: 5px solid #00991b;
+    margin: 3px 10px -7px -3px;
+    border-radius: 9px;
+    background-color: #00991b;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.index-main__11-2-SVG_task-3_content {
+    grid-row: 2;
+    grid-column: 1 / span 4;
+    background-color: #00a8a05c;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #00991b;
+    margin: 5px 10px;
+    border-radius: 9px;
+}
+
+.chat-box__my-message,
+.chat-box__other-message {
+    background-color: #46d7e2;
+    max-width: 300px;
+    word-wrap: break-word;
+    display: inline-block;
+    padding: 4px;
+    margin: 3px;
+    border-radius: 13px;
+}
+
+.chat-box__other-message {
+    align-self: end;
+}
+
+.chat-box__my-message {
+    align-self: start;
 }
