@@ -335,7 +335,7 @@ function update_chat_history() {
         }
     }
 
-    // добавляем прокрутку вниз, чтобы отобразить последнее сообщение
+    // добавляем скрол чтоб помлед. сообщ было видно
     chat_box__content.scrollTop = chat_box__content.scrollHeight;
 }
 
@@ -390,3 +390,4 @@ chat_box__location.addEventListener("click", function () {
     }
 });
 
+// P.S. чуть кровь с злаз не пошла в реализации этого месенджера - но очень круто, аж голова заболела
