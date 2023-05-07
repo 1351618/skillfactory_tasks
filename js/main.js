@@ -391,3 +391,20 @@ chat_box__location.addEventListener("click", function () {
 });
 
 // P.S. чуть кровь с злаз не пошла в реализации этого месенджера - но очень круто, аж голова заболела
+
+
+
+// Практика 5.1
+// Настройте тестовое окружение JEST.
+const standardImage = document.querySelector('.standard');
+const fullScreenImage = document.querySelector('.full_screen');
+
+standardImage.addEventListener('click', () => {
+  standardImage.style.display = 'none';
+  fullScreenImage.style.display = 'block';
+});
+
+fullScreenImage.addEventListener('click', () => {
+  standardImage.style.display = 'block';
+  fullScreenImage.style.display = 'none';
+});
