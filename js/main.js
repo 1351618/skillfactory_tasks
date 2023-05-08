@@ -427,3 +427,22 @@ fullScreenImage_2.addEventListener('click', () => {
   standardImage_2.style.display = 'block';
   fullScreenImage_2.style.display = 'none';
 });
+
+
+// Задание 6.2
+// продумайте тест-кейсы (успешное/неуспешное выполнение функции);
+// продумайте граничные случаи (corner case);
+// напишите юнит-тесты (минимум три).
+
+const standardImage_3 = document.querySelector('.standard_3');
+const fullScreenImage_3 = document.querySelector('.full_screen_3');
+
+standardImage_3.addEventListener('click', () => {
+  standardImage_3.style.display = 'none';
+  fullScreenImage_3.style.display = 'block';
+});
+
+fullScreenImage_3.addEventListener('click', () => {
+  standardImage_3.style.display = 'block';
+  fullScreenImage_3.style.display = 'none';
+});
