@@ -408,3 +408,22 @@ fullScreenImage.addEventListener('click', () => {
   standardImage.style.display = 'block';
   fullScreenImage.style.display = 'none';
 });
+
+// Задание 6.1
+// Реализуйте и протестируйте функцию (проведите хотя бы один тест). Напишите 
+// функцию, которая принимает строку и возвращает эту строку в перевёрнутом виде 
+// (например, “строка” — “акортс”).
+
+
+const standardImage_2 = document.querySelector('.standard_2');
+const fullScreenImage_2 = document.querySelector('.full_screen_2');
+
+standardImage_2.addEventListener('click', () => {
+  standardImage_2.style.display = 'none';
+  fullScreenImage_2.style.display = 'block';
+});
+
+fullScreenImage_2.addEventListener('click', () => {
+  standardImage_2.style.display = 'block';
+  fullScreenImage_2.style.display = 'none';
+});

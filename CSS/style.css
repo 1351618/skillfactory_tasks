@@ -286,7 +286,8 @@
 
 
 /* 3 блок ======================================= */
-.index-main__Practice-5-1_h1_task-1 {
+.index-main__Practice-5-1_h1_task-1,
+.index-main__Practice-6-1_h1_task-2 {
     display: grid;
     grid-template-rows: 150px 150px;
     grid-template-columns: 2fr;
@@ -297,7 +298,8 @@
     justify-content: center;
 }
 
-.index-main__Practice-5-1_h1_task-1 h3 {
+.index-main__Practice-5-1_h1_task-1 h3,
+.index-main__Practice-6-1_h1_task-2 h3 {
     grid-row: 1;
     grid-column: 1;
     margin-left: 50px;
@@ -306,7 +308,8 @@
     font-size: 26px;
 }
 
-.standard {
+.standard,
+.standard_2 {
     grid-row: 1 / span 2;
     grid-column: 2;
     max-height: 300px;
@@ -314,7 +317,8 @@
     border-radius: 15px;
 }
 
-.full_screen {
+.full_screen,
+.full_screen_2 {
     display: none;
     position: fixed;
     top: 0;
@@ -327,9 +331,8 @@
     left: 50%;
 }
 
-
-
-.index-main__Practice-5-1_h1_task-1 span {
+.index-main__Practice-5-1_h1_task-1 span,
+.index-main__Practice-6-1_h1_task-2 span {
     grid-row: 2;
     grid-column: 1;
     margin-left: 50px;
