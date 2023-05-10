@@ -23,7 +23,8 @@
 
 .index-main__JSON-vs-XML_h1,
 .index-main__11-2-SVG_h1,
-.index-main__Practice-5-1 {
+.index-main__Practice-5-1,
+.index-main__slider_h1 {
     color: #342e48;
     font-style: italic;
 }
@@ -345,3 +346,51 @@
     font-size: larger;
     font-weight: bold;
 }
+
+/* блок 4 ================== */
+
+.index-main__slider_task {
+    display: grid;
+    grid-template-rows: 100px 200px;
+    grid-template-columns: 2fr, 1fr;
+    background-color: #39daff66;
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+    align-content: stretch;
+    justify-content: center;
+}
+
+
+.index-main__slider_task h3 {
+    grid-row: 1;
+    grid-column: 1;
+    margin-left: 30px;
+    font-size: 24px;
+}
+
+.index-main__slider_task span {
+    grid-row: 2;
+    grid-column: 1;
+    
+    font-size: 19px;
+    padding: 0px 52px 0px 51px;
+}
+
+.index-main__slider_task a {
+    grid-row: 1 / span 2;
+    grid-column: 3;
+}
+
+.index-main__slider_task img {
+    height: 290px;
+    width: auto;
+    border: 5px solid #000000;
+    cursor: pointer;
+    border-radius: 15px;
+
+}
+
+.index-main__slider_task img:hover {
+    border: 5px solid #e6fb00;
+    border-radius: 15px;
+  }

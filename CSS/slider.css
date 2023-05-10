@@ -1,0 +1,162 @@
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('../fonts/NunitoSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yeseva One';
+    src: url('../fonts/YesevaOne.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+a {
+    color: #ffffff30;;
+    text-decoration: none;
+  }
+
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #131313;
+    /* background-color: #7b7b7b; */
+}
+
+header {
+    display: none;
+}
+
+.main__Rostov-on-Don_back {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.main__Rostov-on-Don_back img{
+    height: 50px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+#main__block {
+    display: grid;
+    grid-template-rows: 70px 100px 128px 105px 130px auto;
+    grid-template-columns: 1fr 1fr 2fr;
+    padding: 107px 134px 0px;
+}
+
+#main__block_image {
+    grid-row: 2 / span 6;
+    grid-column: 3;
+    width: 680px;
+}
+
+.main__block_h1 {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+    font-family: 'Yeseva One', sans-serif;
+    font-size: 27px;
+    
+}
+.main__block_h1,
+.main__block_City_h2,
+.main__block_apartment-area_h2,
+.main__block_Repair-time_h2,
+.main__block_Repair-Cost_h2 {
+    color: #E3B873;
+}
+
+.main__block_City_h2,
+.main__block_apartment-area_h2,
+.main__block_Repair-time_h2,
+.main__block_Repair-Cost_h2 {
+    font-size: 18px;
+}
+
+
+.main__block_span {
+    grid-row: 3;
+    grid-column: 1 / span 2;
+    margin-right: 50px;
+    margin-top: 30px;
+    
+}
+
+
+.main__block_span {
+    font-family: 'Nunito Sans', sans-serif;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+
+
+.main__block_City {
+    grid-row: 4;
+    grid-column: 1;
+    
+}
+.main__block_apartment-area {
+    grid-row: 4;
+    grid-column: 2;
+}
+.main__block_Repair-time {
+    grid-row: 5;
+    grid-column: 1;
+}
+.main__block_Repair-Cost {
+    grid-row: 5;
+    grid-column: 2;
+}
+
+
+
+.main__block_navig-row {
+    grid-row: 6;
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+}
+
+.main__block_navig-row a {
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+
+.main__block_navig-top {
+    grid-row: 1;
+    grid-column: 3;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    
+}
+
+    #row_left,
+    #row_right {
+        font-size: 44px;
+}
+
+.activ-top {
+    color: #E3B873;
+    margin-bottom: 39px;
+    border-bottom: 2px solid #E3B873;
+}
+
+.activ-point {
+    color: white;
+}
+
+
